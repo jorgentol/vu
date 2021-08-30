@@ -59,5 +59,5 @@ fi
 #DISPLAY=:1 xwd -root -silent | convert xwd:- png:/vu/client/screenshot.png #Run this to catch any errors
 
 echo "Starting $(winepath -w /vu/client/vu.com)"
-DISPLAY=:1 wine /vu/client/vu.com -gamepath "$(winepath -w /vu/bf3)" -serverInstancePath "$(winepath -w /vu/instance)" -server -dedicated -headless -listen $LISTEN -mHarmonyPort $HARMONYPORT -RemoteAdminPort $RCONPORT
+DISPLAY=:1 wine /vu/client/vu.com -gamepath "$(winepath -w /vu/bf3)" -serverInstancePath "$(winepath -w /vu/instance)" -server -dedicated -headless ${TICK} -listen $LISTEN -mHarmonyPort $HARMONYPORT -RemoteAdminPort $RCONPORT
 /wine/waitonprocess.sh wineserver
